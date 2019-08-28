@@ -1,5 +1,5 @@
 window.twitter = {
-    tweet: tweet,
+    post: post,
     print: print
 }
 
@@ -8,5 +8,10 @@ function print (content, element) {
     li.setAttribute("class", "tweet");
     li.innerHTML = content;
     element.prepend(li);
-    return 'banana'
+}
+
+function post (list, content, element) {
+    list.push(content);
+    localStorage.setItem('tweetList', JSON.stringify(list));
+    print(content, element);
 }
