@@ -24,25 +24,15 @@ if (!localStorage.getItem('tweetList')) {
 let tweetList = JSON.parse(localStorage['tweetList']);
 
 // print on the screen the tweets in local storage
-tweetList.map(item => {
-    const li = document.createElement('li');
-    li.setAttribute("class", "tweet");
-    li.innerHTML = item;
-    tweets.prepend(li);
-})
+tweetList.map(item => print(item, tweets))
 
 function post(event) {
-    // prevent page from reloading
     event.preventDefault();
-    
-    // add the tweet to the list
-    tweetList.push(tweet.value)
 
-    // add the list to local storage
+    // when a new tweet is posted, update the local storage array and print it to the screen
+    tweetList.push(tweet.value);
     localStorage.setItem('tweetList', JSON.stringify(tweetList));
-
-    // parse the tweets array and put each one in an li item
-    printTweet(tweet.value, tweets);
+    print(tweet.value, tweets);
 
     // makes state of text and button as it was in the beggining
     tweet.value = '';
@@ -51,11 +41,8 @@ function post(event) {
     return false
 }
 
-function printList (list, content, element) {
-    list.map(printTweet(content, element))
-}
-
-function printTweet (content, element) {
+// função que gostaria de passar para o arquivo twitter.js
+function print (content, element) {
     const li = document.createElement('li');
     li.setAttribute("class", "tweet");
     li.innerHTML = content;
