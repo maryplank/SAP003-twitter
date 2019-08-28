@@ -2,12 +2,11 @@ const tweet = document.getElementById('tweet');
 const feed = document.getElementById('feed');
 const tweets = document.getElementById('tweets');
 const submit = document.getElementById('submit');
-let tweetList = JSON.parse(localStorage['tweetList']);
 
 // Start with the 'Tweet' button disabled
 submit.disabled = true;
 
-// if there is no tweet, the button will remain disabled
+// if there is nothing typed in the box, the button will remain disabled
 tweet.onkeyup = () => {
     if (tweet.value.length > 0)
         submit.disabled = false;
@@ -15,17 +14,21 @@ tweet.onkeyup = () => {
         submit.disabled = true;
 }
 
-// If there is a 'tweetList' variable saved to localStorage, get it, else create one.
+// If there is not a 'tweetList' variable saved to localStorage, create one.
 if (!localStorage.getItem('tweetList')) {
+    let tweetList = []
     localStorage.setItem('tweetList', JSON.stringify(tweetList));
 }
 
-// parse the tweets array and put each one in an li item
-tweetList.map(item =>  {
+// parse whatever is saved to local storage into this variable
+let tweetList = JSON.parse(localStorage['tweetList']);
+
+// print on the screen the tweets in local storage
+tweetList.map(item => {
     const li = document.createElement('li');
     li.setAttribute("class", "tweet");
     li.innerHTML = item;
-    tweets.prepend(li)
+    tweets.prepend(li);
 })
 
 function post(event) {
@@ -39,18 +42,24 @@ function post(event) {
     localStorage.setItem('tweetList', JSON.stringify(tweetList));
 
     // parse the tweets array and put each one in an li item
-    tweetList.map(item =>  {
-        const li = document.createElement('li');
-        li.setAttribute("class", "tweet");
-        li.innerHTML = item;
-        tweets.prepend(li)
-    })
+    printTweet(tweet.value, tweets);
 
     // makes state of text and button as it was in the beggining
     tweet.value = '';
     submit.disabled = true;
 
     return false
+}
+
+function printList (list, content, element) {
+    list.map(printTweet(content, element))
+}
+
+function printTweet (content, element) {
+    const li = document.createElement('li');
+    li.setAttribute("class", "tweet");
+    li.innerHTML = content;
+    element.prepend(li);
 }
 
 submit.addEventListener("click", post)
