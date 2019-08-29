@@ -1,22 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Twitter</title>
-</head>
-<body>
-    <form id='newTweet'>
-        <textarea id='tweet' auto-complete="off" autofocus placeholder='Type your tweet'></textarea>
-        <br>
-        <input type='submit' id='submit' value="Tweet">
-    </form>
-    <div id='feed'>
-        <ul id='tweets'>
-        </ul>
-    </div>
-    <script src="twitter.js"></script>
-    <script src="index.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+        <title>Twitter</title>
+    </head>
+    <body>
+        <div class="navbar">Twitter</div>
+        
+        <div class='top'>
+            <div class='profile'>
+                <spam class="name">Mariana Ribeiro</spam>
+                <spam class="bio">Font-end developer</spam>
+            </div>
+
+            <div class='newTweet'>
+                <form id='newTweet'>
+                    <textarea id='tweet' class='tweetTextarea' auto-complete="off" autofocus placeholder='Type your tweet'></textarea>
+                    <br>
+                    <input type='submit' id='submit' class="submit" value="Tweet">
+                </form>
+            </div>
+        </div>
+
+        <div class='bottom'>
+            <div id='feed' class='feed'>
+                <ul id='tweets'>
+                </ul>
+            </div>
+        </div>
+            
+        <script src="twitter.js"></script>
+        <script src="index.js"></script>
+        
+    </body>
 </html>
