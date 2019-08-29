@@ -1,7 +1,7 @@
 window.twitter = {
     post: post,
     print: print,
-    count: count
+    count: count,
 }
 
 function print (content, element) {
@@ -17,6 +17,13 @@ function post (list, content, element) {
     print(content, element);
 }
 
-function count(chars, counter) {
+function count(chars, counter, button) {
     counter.innerHTML = Number(counter.innerHTML = 140 - chars.value.length);
+    if (counter.innerHTML <= 0) {
+        counter.style.color = "red";
+        button.disable = true;
+    } else {
+        counter.style.color = "#03befc";
+        button.disable = false;
+    }
 }

@@ -31,14 +31,14 @@ function callPost(event) {
     event.preventDefault();
     window.twitter.post(tweetList, tweet.value, tweets)
     
-    // after the post, clear the tweet"s field
+    // after the post, clear the tweet's field
     tweet.value = "";
     submit.disabled = true;
     counter.innerHTML = 140;
 }
 
 function callCount() {
-    window.twitter.count(tweet, counter)
+    window.twitter.count(tweet, counter, submit)
 }
 
 tweet.addEventListener("keyup", callCount)
