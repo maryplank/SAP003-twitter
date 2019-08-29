@@ -21,17 +21,41 @@ html {
 }
 
 .profile {
+    font-family: Roboto Mono, monospace;
+    color: black;
     display: inline-block;
-    /* top right bottom left*/
     margin: 40px 1.5% 0 13%;
+    padding: 30px;
     width: 35%;
     height: 215px;
     background-color: white;
+    box-sizing: border-box;
+}
+
+.name {
+    font-size: 26px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.bio {
+    font-size: 16px;
+    font-weight: normal;
+    display: block;
+    height: 75px;
+}
+
+.link a {
+    font-size: 18px;
+    color: #0289b6;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
 }
 
 .newTweet {
     float: right;
-    /* top right bottom left*/
     margin: 40px 13% 0 1.5%;
     width: 35%;
     height: 215px;
@@ -41,17 +65,21 @@ html {
 }
 
 .tweetTextarea {
-    width: 92%;
+    font-family: Roboto Mono, monospace;
+    font-size: 15px;
+    color: black;
+    width: 94%;
     height: 120px;
-    /* top right bottom left*/
     margin: 3%;
     resize: none;
     border: none;
+    padding: 12px;
     border-bottom: 2px solid #555;
+    box-sizing: border-box;
 }
 
 .tweetTextarea:focus {
-    border: 1px solid white;
+    outline: none;
     border-bottom: 2px solid #03befc;
 }
 
@@ -63,7 +91,7 @@ html {
     border: none;
     width: 90px;
     height: 40px;
-    margin-left: 3%;
+    margin: 3%;
     background-color: #03befc
 }
 
@@ -72,9 +100,28 @@ html {
     background-color: #bbb;
 }
 
-.feed {
+.counter {
+    float: right;
+    margin: 3% 4% 0 0;
+    font-family: Roboto Mono, monospace;
+    font-size: 25px;
+    font-weight: bold;
+    color: #03befc;
+}
+
+.tweets {
+    padding: 0;
+}
+
+.tweet {
+    font-family: Roboto Mono, monospace;
+    font-size: 15px;
+    list-style-type: none;
     display: block;
     background-color: white;
-    width: 80%;
-    margin: 10px 10% 10px 10%;
+    border-radius: 5px;
+    padding: 12px;
+    width: 74%;
+    margin: 10px 13% 10px 13%;
+    box-sizing: border-box;
 }
