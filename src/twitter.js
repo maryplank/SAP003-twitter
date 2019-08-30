@@ -17,13 +17,17 @@ function post (list, content, element) {
     print(content, element);
 }
 
-function count(chars, counter, button) {
+function count(chars, counter) {
+
     counter.innerHTML = Number(counter.innerHTML = 140 - chars.value.length);
-    if (counter.innerHTML <= 0) {
-        counter.style.color = "red";
-        button.disable = true;
+    
+    if (counter.innerHTML >= 10 && counter.innerHTML <= 19) {
+        counter.style.color = "#a293a3";
+    } else if (counter.innerHTML >= 1 && counter.innerHTML <= 9) {
+        counter.style.color = "#bb746b";
+    } else if (counter.innerHTML <= 0) {
+        counter.style.color = "#c93d16";
     } else {
         counter.style.color = "#03befc";
-        button.disable = false;
     }
 }
