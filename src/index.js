@@ -1,7 +1,8 @@
 const tweet = document.getElementById("tweet");
 const feed = document.getElementById("feed");
 const submit = document.getElementById("submit");
-let counter = document.getElementById("counter")
+let counter = document.getElementById("counter");
+let numOfChars = 140;
 
 // Start with the "Tweet" button disabled
 submit.disabled = true;
@@ -13,6 +14,9 @@ tweet.oninput = () => {
     else
         submit.disabled = false;
 }
+
+// set counter to 140
+counter.innerHTML = numOfChars;
 
 // If there is not a "tweetList" variable saved to localStorage, create one.
 if (!localStorage.getItem("tweetList")) {
@@ -38,12 +42,7 @@ function callPost(event) {
 }
 
 function callCount() {
-    window.twitter.count(tweet, counter)
-}
-
-function disable() {
-    if (tweet.value.length <= 140) 
-        submit.disabled = true;
+    window.twitter.count(tweet, counter, numOfChars)
 }
 
 tweet.addEventListener("input", callCount)

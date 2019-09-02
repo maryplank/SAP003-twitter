@@ -66,7 +66,7 @@ html {
 
 .tweetTextarea {
     font-family: Roboto Mono, monospace;
-    font-size: 15px;
+    font-size: 18px;
     color: black;
     width: 94%;
     height: 120px;
@@ -115,7 +115,7 @@ html {
 
 .tweet {
     font-family: Roboto Mono, monospace;
-    font-size: 15px;
+    font-size: 18px;
     list-style-type: none;
     display: block;
     background-color: white;

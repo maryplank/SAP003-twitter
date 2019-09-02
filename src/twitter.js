@@ -17,9 +17,9 @@ function post (list, content, element) {
     print(content, element);
 }
 
-function count(chars, counter) {
+function count(chars, counter, num) {
 
-    counter.innerHTML = Number(counter.innerHTML = 140 - chars.value.length);
+    counter.innerHTML = Number(counter.innerHTML = num - chars.value.length);
     
     if (counter.innerHTML >= 10 && counter.innerHTML <= 19) {
         counter.style.color = "#a293a3";
