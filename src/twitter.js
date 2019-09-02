@@ -2,6 +2,7 @@ window.twitter = {
     post: post,
     print: print,
     count: count,
+    expand: expand
 }
 
 function print (content, element) {
@@ -17,7 +18,7 @@ function post (list, content, element) {
     print(content, element);
 }
 
-function count(chars, counter, num) {
+function count (chars, counter, num) {
 
     counter.innerHTML = Number(counter.innerHTML = num - chars.value.length);
     
@@ -30,4 +31,11 @@ function count(chars, counter, num) {
     } else {
         counter.style.color = "#03befc";
     }
+}
+
+function expand (text, div) {
+    text.style.cssText = 'height: auto;';
+    text.style.cssText = 'height:' + text.scrollHeight + 'px;';
+    div.style.cssText = 'height: auto;';
+    div.style.cssText = 'height' + text.scrollHeight + 'px;';
 }

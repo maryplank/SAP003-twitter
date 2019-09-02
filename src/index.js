@@ -1,13 +1,14 @@
 const tweet = document.getElementById("tweet");
+const tweetDiv = document.getElementById("newTweet");
 const feed = document.getElementById("feed");
 const submit = document.getElementById("submit");
-let counter = document.getElementById("counter");
-let numOfChars = 140;
+const counter = document.getElementById("counter");
+const numOfChars = 140;
 
 // Start with the "Tweet" button disabled
 submit.disabled = true;
 
-// if there is no text, or a text , the button will remain disabled
+// if there is no text, or a text bigger than 140 chars, the button will be disabled
 tweet.oninput = () => {
     if (tweet.value.length <= 0 || tweet.value.length >= 141)
         submit.disabled = true;
@@ -45,5 +46,10 @@ function callCount() {
     window.twitter.count(tweet, counter, numOfChars)
 }
 
+function callExpand() {
+    window.twitter.expand(tweet, tweetDiv)
+}
+
 tweet.addEventListener("input", callCount)
+tweet.addEventListener("input", callExpand)
 submit.addEventListener("click", callPost)
