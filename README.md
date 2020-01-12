@@ -6,25 +6,25 @@ As a part of Laboratoria's bootcamp exercise, we were supposed to replicate the 
 
 ## Project's specifications
 
-### Version 0.0.1
+#### Version 0.0.1
 - Create a form that allow to inset text and a 'Tweet' button 
 - Add a click event so the form input are submited
 - In the event, obtain the text
 - Add that text to the HTML
 - Save the tweets at `localStorage`.
 
-### Version 0.0.2
+#### Version 0.0.2
 
 - Desable the 'Tweet' button when there is no text in the form
 - Count down the text characters from 140
 
-### Version 0.0.3
+#### Version 0.0.3
 
 - If the text has more than 140 caracteres, desable the 'Tweet' button and show the counter negative.
 - If the text has more than 120 caracteres, change the counter's color.
 - If the text has more than 130 caracteres, change the counter's color again.
 
-### Version 0.0.4
+#### Version 0.0.4
 
 - When enter is pressed, resize the textbox so it shows the whole text.
 
